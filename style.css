@@ -35,18 +35,17 @@ body {
 main {
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 
 header {
-  height: 3rem;
-  width: 7.5rem;
-  margin-top: 2.5rem;
-  margin-left: 5rem;
+  height: 5.5rem;
+  width: 2rem;
 }
 
 header > .logo-image {
-  height: 3rem;
-  width: 2rem;
+  width: 100%;
+  margin: 2.5rem 0 0 2.5rem;
 }
 
 h1 {
@@ -59,9 +58,6 @@ button {
   height: 67px;
   border-radius: 24px;
   cursor: pointer;
-}
-
-span {
 }
 
 .wrapper {
@@ -81,6 +77,7 @@ span {
 
 .warning-wrapper {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
 }
 
@@ -105,7 +102,7 @@ span {
   height: 55rem;
   border-radius: 32px;
 
-  background-color: green;
+  background-color: var(--white);
 
   position: relative;
   margin-left: 5rem;
@@ -121,6 +118,20 @@ span {
 
 .message-image {
   width: 100%;
+}
+
+.decoded-box > h2 {
+  text-align: center;
+  margin-top: 2rem;
+  font-weight: 700;
+  color: var(--gray-500);
+}
+
+.decoded-box > p {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 400;
+  color: var(--gray-400);
 }
 
 .button-container {
