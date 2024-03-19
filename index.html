@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
     <title>Decodificador</title>
   </head>
   <body>
@@ -20,7 +21,7 @@
 
       <div class="wrapper">
         <div class="text-container">
-          <textarea class="text-box">Digite seu texto</textarea>
+          <textarea class="text-box"></textarea>
           <div class="warning-wrapper">
             <img
               class="warning-image"
@@ -52,6 +53,8 @@
             Digite um texto que você deseja criptografar ou descriptografar.
           </p>
         </div>
+
+        <textarea readonly class="decoded-container"></textarea>
         <p></p>
       </div>
     </main>

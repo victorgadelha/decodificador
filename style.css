@@ -143,3 +143,30 @@ button {
   gap: 1.5rem;
   margin-top: 1rem;
 }
+
+.decoded-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 25rem;
+  height: 55rem;
+  padding: 0 1rem 0 1rem;
+  border-radius: 32px;
+
+  font-size: 2rem;
+  font-weight: 400;
+
+  background-color: var(--white);
+
+  position: relative;
+  margin-left: 5rem;
+  top: -3rem;
+
+  resize: none;
+}
+
+.disabled {
+  display: none;
+}
