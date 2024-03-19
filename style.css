@@ -16,6 +16,8 @@
   --light-blue-300: #e9ecf8;
   --light-blue-400: #aab2d5;
   --light-blue-500: #757fb2;
+
+  --white: #ffff;
 }
 
 * {
@@ -35,7 +37,7 @@ main {
   height: 100vh;
 }
 
-.logo-container {
+.image-container {
   height: 3rem;
   width: 7.5rem;
 
@@ -43,7 +45,7 @@ main {
   margin-left: 2.5rem;
 }
 
-.logo-container > .logo-container__image {
+.image-container > .logo-image {
   height: 3rem;
   width: 2rem;
 }
@@ -59,14 +61,15 @@ h1 {
   justify-content: space-evenly;
 }
 
-.text-container {
+.text-box {
   width: 39.6rem;
   height: 40rem;
   background-color: red;
 }
 
-.decoded-text {
+.decoded-box {
   width: 25rem;
   height: 944px;
-  background-color: black;
+  background-color: var(--white);
+  border-radius: 32px;
 }
