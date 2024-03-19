@@ -1,0 +1,72 @@
+:root {
+  --dark-blue-100: #609ed4;
+  --dark-blue-200: #356ea9;
+  --dark-blue-300: #0a3971;
+  --dark-blue-400: #072b61;
+  --dark-blue-500: #052051;
+
+  --gray-100: #ced4da;
+  --gray-200: #adb58d;
+  --gray-300: #868e96;
+  --gray-400: #495057;
+  --gray-500: #343a40;
+
+  --light-blue-100: #f3f5fc;
+  --light-blue-200: #eff1fa;
+  --light-blue-300: #e9ecf8;
+  --light-blue-400: #aab2d5;
+  --light-blue-500: #757fb2;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--light-blue-100);
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+}
+
+.logo-container {
+  height: 3rem;
+  width: 7.5rem;
+
+  margin-top: 2.5rem;
+  margin-left: 2.5rem;
+}
+
+.logo-container > .logo-container__image {
+  height: 3rem;
+  width: 2rem;
+}
+
+h1 {
+  margin: 5rem 0 0 15rem;
+  font-weight: 400;
+  color: var(--dark-blue-300);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.text-container {
+  width: 39.6rem;
+  height: 40rem;
+  background-color: red;
+}
+
+.decoded-text {
+  width: 25rem;
+  height: 944px;
+  background-color: black;
+}
