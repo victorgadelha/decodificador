@@ -13,19 +13,21 @@
     <title>Decodificador</title>
   </head>
   <body>
-    <header></header>
     <main>
-      <div class="image-container">
+      <header>
         <img class="logo-image" src="assets/logo.svg" alt="" />
-      </div>
-      <h1>Digite o seu texto</h1>
+      </header>
+
       <div class="wrapper">
-        <div class=""></div>
-        <div class="text-box">
-          <div class="image-containerr">
-            <img class="warning-image" src="assets/aviso.svg" alt="" />
+        <div class="text-container">
+          <h1>Digite o seu texto</h1>
+          <div class="text-box"></div>
+          <div class="warning-wrapper">
+            <div class="image-containerr">
+              <img class="warning-image" src="assets/aviso.svg" alt="" />
+            </div>
+            <span>Apenas letras minúsculas e sem acento.</span>
           </div>
-          <span>Apenas letras minúsculas e sem acento.</span>
           <div class="button-container">
             <button class="encrypt" type="button" name="Criptografar">
               Criptografar
@@ -38,7 +40,7 @@
 
         <div class="decoded-box">
           <div class="image-container"></div>
-          <img class="no-message" src="assets/no-text.svg" alt="" />
+          <img class="message-image" src="assets/no-text.svg" alt="" />
           <h2>Nenhuma mensagem encontrada</h2>
           <p>
             Digite um texto que você deseja criptografar ou descriptografar.

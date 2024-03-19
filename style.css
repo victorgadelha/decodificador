@@ -37,52 +37,51 @@ main {
   height: 100vh;
 }
 
-.image-container {
+header {
   height: 3rem;
   width: 7.5rem;
-
   margin-top: 2.5rem;
-  margin-left: 2.5rem;
+  margin-left: 5rem;
 }
 
-.image-container > .logo-image {
+header > .logo-image {
   height: 3rem;
   width: 2rem;
 }
 
 h1 {
-  margin: 5rem 0 0 15rem;
   font-weight: 400;
   color: var(--dark-blue-300);
-}
-
-.wrapper {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.text-box {
-  width: 39.6rem;
-  height: 40rem;
-  background-color: red;
-}
-
-.decoded-box {
-  width: 25rem;
-  height: 944px;
-  background-color: var(--white);
-  border-radius: 32px;
-}
-
-.button-container {
-  display: flex;
-  gap: 1.5rem;
 }
 
 button {
   width: 20.5rem;
   height: 67px;
   border-radius: 24px;
+  cursor: pointer;
+}
+
+span {
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container {
+  height: 49rem;
+}
+
+.text-box {
+  width: 42.5rem;
+  height: 35rem;
+}
+
+.warning-wrapper {
+  display: flex;
+  gap: 0.5rem;
 }
 
 .encrypt {
@@ -94,4 +93,38 @@ button {
   background-color: var(--gray-100);
   border-color: var(--dark-blue-300);
   color: var(--dark-blue-300);
+}
+
+.decoded-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 25rem;
+  height: 55rem;
+  border-radius: 32px;
+
+  background-color: green;
+
+  position: relative;
+  margin-left: 5rem;
+
+  position: relative;
+  top: -3rem;
+}
+
+.decoded-box > .message-container {
+  width: 21rem;
+  height: 19rem;
+}
+
+.message-image {
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
