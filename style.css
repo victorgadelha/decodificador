@@ -26,10 +26,12 @@
   box-sizing: border-box;
 }
 
-body {
+body,
+textarea {
   background-color: var(--light-blue-100);
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
+  border: none;
 }
 
 main {
@@ -46,11 +48,6 @@ header {
 header > .logo-image {
   width: 100%;
   margin: 2.5rem 0 0 2.5rem;
-}
-
-h1 {
-  font-weight: 400;
-  color: var(--dark-blue-300);
 }
 
 button {
@@ -71,8 +68,15 @@ button {
 }
 
 .text-box {
+  resize: none;
   width: 42.5rem;
   height: 35rem;
+
+  font-size: 2rem;
+  font-weight: 400;
+
+  background-color: var(--light-blue-100);
+  color: var(--dark-blue-300);
 }
 
 .warning-wrapper {
