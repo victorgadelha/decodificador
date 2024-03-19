@@ -17,3 +17,9 @@
   --light-blue-400: #aab2d5;
   --light-blue-500: #757fb2;
 }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
