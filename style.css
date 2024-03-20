@@ -159,6 +159,7 @@ button {
   font-weight: 400;
 
   background-color: var(--white);
+  color: var(--dark-blue-300);
 
   position: relative;
   margin-left: 5rem;
