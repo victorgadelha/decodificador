@@ -4,7 +4,7 @@ const textBox = document.querySelector(".text-box");
 const decodedBox = document.querySelector(".decoded-box");
 const decodedContainer = document.querySelector(".decoded-container");
 
-let isEncrypted = false;
+let isEncrypted;
 
 const encrypt = () => {
   const initialText = textBox.value;
@@ -36,7 +36,7 @@ const decrypt = () => {
   if (!isEncrypted) return;
   isEncrypted = false;
 
-  const decodedText = decodedContainer.value
+  const decodedText = textBox.value
     .replace(/enter/g, "e")
     .replace(/imes/g, "i")
     .replace(/ai/g, "a")
