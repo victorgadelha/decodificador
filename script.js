@@ -5,9 +5,15 @@ const decodedBox = document.querySelector(".decoded-box");
 const decodedContainer = document.querySelector(".decoded-container");
 
 const encrypt = () => {
-  const initialText = textBox.value
+  const initialText = textBox.value;
+
+  const decodedText = initialText
     .toLowerCase()
     .normalize("NFD")
+    .replace(/e/g, "enter")
+    .replace(/i/g, "imes")
+    .replace(/a/g, "ai")
+    .replace(/u/g, "ufat")
     .replace(/[\u0300-\u036f]/g, "") // Remove acentos
     .replace(/[^\w\s]/g, "") // Remove caracteres especiais, exceto espaços
     .replace(/\s+/g, " "); // Remove espaços extras
@@ -19,7 +25,7 @@ const encrypt = () => {
     decodedBox.classList.add("disabled");
     decodedContainer.classList.remove("disabled");
 
-    decodedContainer.innerHTML = initialText;
+    decodedContainer.innerHTML = decodedText;
   }
 
   console.log(initialText);
