@@ -40,5 +40,20 @@ const decrypt = () => {
   decodedContainer.innerHTML = decodedText;
 };
 
+const verifyTextArea = () => {
+  const initialText = textBox.value;
+
+  if (initialText === "") {
+    decodedBox.classList.remove("disabled");
+    decodedContainer.classList.add("disabled");
+  } else {
+    decodedBox.classList.add("disabled");
+    decodedContainer.classList.remove("disabled");
+
+    decodedContainer.innerHTML = initialText;
+  }
+};
+
 encryptButton.addEventListener("click", encrypt);
 decryptptButton.addEventListener("click", decrypt);
+textBox.addEventListener("input", verifyTextArea);
