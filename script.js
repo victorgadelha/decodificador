@@ -6,7 +6,6 @@ const decodedContainer = document.querySelector(".decoded-container");
 
 const encrypt = () => {
   const initialText = textBox.value;
-
   const decodedText = initialText
     .toLowerCase()
     .normalize("NFD")
@@ -31,4 +30,15 @@ const encrypt = () => {
   console.log(initialText);
 };
 
+const decrypt = () => {
+  const decodedText = decodedContainer.value
+    .replace(/enter/g, "e")
+    .replace(/imes/g, "i")
+    .replace(/ai/g, "a")
+    .replace(/ufat/g, "u");
+
+  decodedContainer.innerHTML = decodedText;
+};
+
 encryptButton.addEventListener("click", encrypt);
+decryptptButton.addEventListener("click", decrypt);
