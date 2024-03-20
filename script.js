@@ -4,6 +4,8 @@ const textBox = document.querySelector(".text-box");
 const decodedBox = document.querySelector(".decoded-box");
 const decodedContainer = document.querySelector(".decoded-container");
 
+let isEncrypted = false;
+
 const encrypt = () => {
   const initialText = textBox.value;
   const decodedText = initialText
@@ -24,20 +26,23 @@ const encrypt = () => {
     decodedBox.classList.add("disabled");
     decodedContainer.classList.remove("disabled");
 
-    decodedContainer.innerHTML = decodedText;
-  }
+    decodedContainer.value = decodedText;
 
-  console.log(initialText);
+    isEncrypted = true;
+  }
 };
 
 const decrypt = () => {
+  if (!isEncrypted) return;
+  isEncrypted = false;
+
   const decodedText = decodedContainer.value
     .replace(/enter/g, "e")
     .replace(/imes/g, "i")
     .replace(/ai/g, "a")
     .replace(/ufat/g, "u");
 
-  decodedContainer.innerHTML = decodedText;
+  decodedContainer.value = decodedText;
 };
 
 const verifyTextArea = () => {
@@ -50,10 +55,27 @@ const verifyTextArea = () => {
     decodedBox.classList.add("disabled");
     decodedContainer.classList.remove("disabled");
 
-    decodedContainer.innerHTML = initialText;
+    decodedContainer.value = initialText;
   }
 };
 
+const handleTextBox = () => {
+  if (isTextBoxFocused()) {
+    textBox.value = "Digite seu texto";
+    decodedBox.classList.remove("disabled");
+    decodedContainer.classList.add("disabled");
+  }
+};
+
+const isTextBoxFocused = () => {
+  const focusedElement = document.activeElement;
+  return focusedElement !== textBox && textBox.value === "";
+};
+
+isTextBoxFocused();
+
 encryptButton.addEventListener("click", encrypt);
 decryptptButton.addEventListener("click", decrypt);
-textBox.addEventListener("input", verifyTextArea);
+
+textBox.addEventListener("focus", handleTextBox);
+textBox.addEventListener("blur", handleTextBox);
