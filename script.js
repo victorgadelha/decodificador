@@ -5,8 +5,13 @@ const decodedBox = document.querySelector(".decoded-box");
 const decodedContainer = document.querySelector(".decoded-container");
 
 let isEncrypted;
+console.log(isEncrypted);
 
 const encrypt = () => {
+  if (isEncrypted) return;
+  isEncrypted = true;
+  console.log(isEncrypted);
+
   const initialText = textBox.value;
   const decodedText = initialText
     .toLowerCase()
@@ -15,6 +20,7 @@ const encrypt = () => {
     .replace(/i/g, "imes")
     .replace(/a/g, "ai")
     .replace(/u/g, "ufat")
+    .replace(/o/g, "ober")
     .replace(/[\u0300-\u036f]/g, "") // Remove acentos
     .replace(/[^\w\s]/g, "") // Remove caracteres especiais, exceto espaços
     .replace(/\s+/g, " "); // Remove espaços extras
@@ -27,22 +33,32 @@ const encrypt = () => {
     decodedContainer.classList.remove("disabled");
 
     decodedContainer.value = decodedText;
-
-    isEncrypted = true;
   }
 };
 
 const decrypt = () => {
-  if (!isEncrypted) return;
+  if (isEncrypted === false) return;
   isEncrypted = false;
+  console.log(isEncrypted);
 
-  const decodedText = textBox.value
-    .replace(/enter/g, "e")
-    .replace(/imes/g, "i")
-    .replace(/ai/g, "a")
-    .replace(/ufat/g, "u");
+  const initialText = textBox.value;
 
-  decodedContainer.value = decodedText;
+  if (initialText !== "") {
+    const decodedText = initialText
+      .replace(/enter/g, "e")
+      .replace(/imes/g, "i")
+      .replace(/ai/g, "a")
+      .replace(/ufat/g, "u")
+      .replace(/ober/g, "o");
+
+    decodedBox.classList.add("disabled");
+    decodedContainer.classList.remove("disabled");
+
+    decodedContainer.value = decodedText;
+  } else {
+    decodedBox.classList.remove("disabled");
+    decodedContainer.classList.add("disabled");
+  }
 };
 
 const verifyTextArea = () => {
@@ -55,8 +71,13 @@ const verifyTextArea = () => {
     decodedBox.classList.add("disabled");
     decodedContainer.classList.remove("disabled");
 
-    decodedContainer.value = initialText;
+    // decodedContainer.value = initialText;
   }
+};
+
+const isTextBoxFocused = () => {
+  const focusedElement = document.activeElement;
+  return focusedElement !== textBox && textBox.value === "";
 };
 
 const handleTextBox = () => {
@@ -67,12 +88,7 @@ const handleTextBox = () => {
   }
 };
 
-const isTextBoxFocused = () => {
-  const focusedElement = document.activeElement;
-  return focusedElement !== textBox && textBox.value === "";
-};
-
-isTextBoxFocused();
+handleTextBox();
 
 encryptButton.addEventListener("click", encrypt);
 decryptptButton.addEventListener("click", decrypt);
