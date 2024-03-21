@@ -5,12 +5,10 @@ const decodedBox = document.querySelector(".decoded-box");
 const decodedContainer = document.querySelector(".decoded-container");
 
 let isEncrypted;
-console.log(isEncrypted);
 
 const encrypt = () => {
   if (isEncrypted) return;
   isEncrypted = true;
-  console.log(isEncrypted);
 
   const initialText = textBox.value;
   const decodedText = initialText
@@ -39,7 +37,6 @@ const encrypt = () => {
 const decrypt = () => {
   if (isEncrypted === false) return;
   isEncrypted = false;
-  console.log(isEncrypted);
 
   const initialText = textBox.value;
 
