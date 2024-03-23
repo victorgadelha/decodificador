@@ -14,49 +14,48 @@
     <title>Decodificador</title>
   </head>
   <body>
+    <header>
+      <img class="logo-image" src="assets/logo.svg" alt="Logo da Alura" />
+    </header>
     <main>
-      <header>
-        <img class="logo-image" src="assets/logo.svg" alt="Logo da Alura" />
-      </header>
-
-      <div class="wrapper">
-        <div class="text-container">
-          <textarea class="text-box">Digite seu texto</textarea>
-          <div class="warning-wrapper">
-            <img
-              class="warning-image"
-              src="assets/aviso.svg"
-              alt="ícone de exclamação"
-            />
-
-            <span>Apenas letras minúsculas e sem acento.</span>
-          </div>
-          <div class="button-container">
-            <button class="encrypt" type="button" name="Criptografar">
-              Criptografar
-            </button>
-            <button class="decrypt" type="button" name="Descriptografar">
-              Descriptografar
-            </button>
-          </div>
+      <section class="input-container">
+        <div class="text-box-container">
+          <textarea
+            placeholder="Digite seu texto aqui"
+            class="text-box"
+          ></textarea>
         </div>
 
-        <div class="decoded-box">
-          <div class="image-container"></div>
+        <div class="warning-wrapper">
           <img
-            class="message-image"
-            src="assets/no-text.svg"
-            alt="Uma pessoa procurando a mensagem com uma lupa"
+            class="warning-image"
+            src="assets/aviso.svg"
+            alt="ícone de exclamação"
           />
-          <h2>Nenhuma mensagem encontrada</h2>
-          <p>
-            Digite um texto que você deseja criptografar ou descriptografar.
-          </p>
-        </div>
 
-        <textarea readonly class="decoded-container disabled"></textarea>
-        <p></p>
-      </div>
+          <span>Apenas letras minúsculas e sem acento.</span>
+        </div>
+        <div class="button-container">
+          <button class="encrypt" type="button" name="Criptografar">
+            Criptografar
+          </button>
+          <button class="decrypt" type="button" name="Descriptografar">
+            Descriptografar
+          </button>
+        </div>
+      </section>
+
+      <section class="output-container">
+        <img
+          class="message-image"
+          src="assets/no-text.svg"
+          alt="Uma pessoa procurando a mensagem com uma lupa"
+        />
+        <h2>Nenhuma mensagem encontrada</h2>
+        <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
+      </section>
+
+      <textarea readonly class="decoded-container disabled"></textarea>
     </main>
   </body>
 </html>

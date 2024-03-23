@@ -77,16 +77,6 @@ const isTextBoxFocused = () => {
   return focusedElement !== textBox && textBox.value === "";
 };
 
-const handleTextBox = () => {
-  if (isTextBoxFocused()) {
-    textBox.value = "Digite seu texto";
-    decodedBox.classList.remove("disabled");
-    decodedContainer.classList.add("disabled");
-  }
-};
-
-handleTextBox();
-
 encryptButton.addEventListener("click", encrypt);
 decryptptButton.addEventListener("click", decrypt);
 
