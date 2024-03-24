@@ -42,8 +42,10 @@ textarea {
   background-color: var(--light-blue-100);
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
+
   outline: none;
   border: none;
+  resize: none;
 }
 
 main {
@@ -86,10 +88,8 @@ header {
 }
 
 .text-box {
-  outline: none;
   height: 100%;
   width: 100%;
-  resize: none;
   font-size: 2rem;
   font-weight: 400;
 
@@ -131,7 +131,7 @@ header {
   width: 50%;
 }
 
-.output-container {
+.no-message-container {
   position: relative;
   top: -2rem;
   display: flex;
@@ -152,18 +152,46 @@ header {
   width: 100%;
 }
 
-.output-container > h2 {
+.no-message-container > h2 {
   text-align: center;
   margin-top: 2rem;
   font-weight: 700;
   color: var(--gray-500);
 }
 
-.output-container > p {
+.no-message-container > p {
   text-align: center;
   margin-top: 1rem;
   font-weight: 400;
   color: var(--gray-400);
+}
+
+.output-container {
+  position: relative;
+  top: -2rem;
+
+  height: 95%;
+  width: 20%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 32px;
+}
+
+.output-text {
+  height: 100%;
+  width: 100%;
+
+  font-size: 2rem;
+  font-weight: 400;
+
+  background-color: var(--white);
+  border-radius: 32px;
+
+  padding: 2rem;
 }
 
 .disabled {

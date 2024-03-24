@@ -1,8 +1,9 @@
 const encryptButton = document.querySelector(".encrypt");
 const decryptptButton = document.querySelector(".decrypt");
-const textBox = document.querySelector(".text-box");
-const decodedBox = document.querySelector(".decoded-box");
-const decodedContainer = document.querySelector(".decoded-container");
+const inputText = document.querySelector(".text-box");
+const noMessageBox = document.querySelector(".no-message-container");
+const outputContainer = document.querySelector(".output-container");
+const outputText = document.querySelector(".output-text");
 
 let isEncrypted;
 
@@ -10,7 +11,7 @@ const encrypt = () => {
   if (isEncrypted) return;
   isEncrypted = true;
 
-  const initialText = textBox.value;
+  const initialText = inputText.value;
   const decodedText = initialText
     .toLowerCase()
     .normalize("NFD")
@@ -24,13 +25,13 @@ const encrypt = () => {
     .replace(/\s+/g, " "); // Remove espaços extras
 
   if (initialText === "") {
-    decodedBox.classList.remove("disabled");
-    decodedContainer.classList.add("disabled");
+    noMessageBox.classList.remove("disabled");
+    outputContainer.classList.add("disabled");
   } else {
-    decodedBox.classList.add("disabled");
-    decodedContainer.classList.remove("disabled");
+    noMessageBox.classList.add("disabled");
+    outputContainer.classList.remove("disabled");
 
-    decodedContainer.value = decodedText;
+    outputText.value = decodedText;
   }
 };
 
@@ -38,7 +39,7 @@ const decrypt = () => {
   if (isEncrypted === false) return;
   isEncrypted = false;
 
-  const initialText = textBox.value;
+  const initialText = inputText.value;
 
   if (initialText !== "") {
     const decodedText = initialText
@@ -48,37 +49,37 @@ const decrypt = () => {
       .replace(/ufat/g, "u")
       .replace(/ober/g, "o");
 
-    decodedBox.classList.add("disabled");
-    decodedContainer.classList.remove("disabled");
+    noMessageBox.classList.add("disabled");
+    outputText.classList.remove("disabled");
 
-    decodedContainer.value = decodedText;
+    outputText.value = decodedText;
   } else {
-    decodedBox.classList.remove("disabled");
-    decodedContainer.classList.add("disabled");
+    noMessageBox.classList.remove("disabled");
+    outputText.classList.add("disabled");
   }
 };
 
 const verifyTextArea = () => {
-  const initialText = textBox.value;
+  const initialText = inputText.value;
 
   if (initialText === "") {
-    decodedBox.classList.remove("disabled");
-    decodedContainer.classList.add("disabled");
+    noMessageBox.classList.remove("disabled");
+    outputText.classList.add("disabled");
   } else {
-    decodedBox.classList.add("disabled");
-    decodedContainer.classList.remove("disabled");
+    noMessageBox.classList.add("disabled");
+    outputText.classList.remove("disabled");
 
-    // decodedContainer.value = initialText;
+    // outputText.value = initialText;
   }
 };
 
-const isTextBoxFocused = () => {
+const isinputTextFocused = () => {
   const focusedElement = document.activeElement;
-  return focusedElement !== textBox && textBox.value === "";
+  return focusedElement !== inputText && inputText.value === "";
 };
 
 encryptButton.addEventListener("click", encrypt);
 decryptptButton.addEventListener("click", decrypt);
 
-textBox.addEventListener("focus", handleTextBox);
-textBox.addEventListener("blur", handleTextBox);
+inputText.addEventListener("focus", handleinputText);
+inputText.addEventListener("blur", handleinputText);
