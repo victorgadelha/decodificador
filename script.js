@@ -47,10 +47,13 @@ const decrypt = () => {
       .replace(/imes/g, "i")
       .replace(/ai/g, "a")
       .replace(/ufat/g, "u")
-      .replace(/ober/g, "o");
+      .replace(/ober/g, "o")
+      .replace(/[\u0300-\u036f]/g, "") // Remove acentos
+      .replace(/[^\w\s]/g, "") // Remove caracteres especiais, exceto espaços
+      .replace(/\s+/g, " "); // Remove espaços extras;
 
     noMessageBox.classList.add("disabled");
-    outputText.classList.remove("disabled");
+    outputContainer.classList.remove("disabled");
 
     outputText.value = decodedText;
   } else {
