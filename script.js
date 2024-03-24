@@ -7,6 +7,8 @@ const outputText = document.querySelector(".output-text");
 
 let isEncrypted;
 
+let previousValue = inputText.value;
+
 const encrypt = () => {
   if (isEncrypted) return;
   isEncrypted = true;
@@ -76,13 +78,25 @@ const verifyTextArea = () => {
   }
 };
 
-const isinputTextFocused = () => {
-  const focusedElement = document.activeElement;
-  return focusedElement !== inputText && inputText.value === "";
-};
-
 encryptButton.addEventListener("click", encrypt);
 decryptptButton.addEventListener("click", decrypt);
 
-inputText.addEventListener("focus", handleinputText);
-inputText.addEventListener("blur", handleinputText);
+inputText.addEventListener("input", () => {
+  const currentValue = inputText.value;
+
+  if (currentValue !== previousValue) {
+    isEncrypted = undefined;
+  }
+
+  if (inputText.value === "") {
+    noMessageBox.classList.remove("disabled");
+    outputContainer.classList.add("disabled");
+  } else {
+    noMessageBox.classList.add("disabled");
+    outputContainer.classList.remove("disabled");
+
+    outputText.value = inputText.value;
+  }
+
+  previousValue = currentValue;
+});
